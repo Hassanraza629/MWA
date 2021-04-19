@@ -1,0 +1,49 @@
+<nb-card *ngIf="hotel!=null" size="small" status="success">
+    <nb-card-header>{{ hotel.name }}</nb-card-header>
+    <nb-card-body class ="single-card">
+      <div class="block_size hotel-pic">
+        <img [src]="hotel.image" alt="Hotel Picture" id="hotel-image"/>
+       </div>
+       <div class="hotel-content">
+         <p style="color:#F6AB3F " > Rating :{{hotel.rating}} &#9733;</p>
+         <p class="detail-text" style="line-height: 5px;"> &#9881; {{hotel.address}} </p> 
+         <p class="detail-text" style="line-height: 5px;">&#9742;   {{hotel.contact}} </p>
+         <p class="detail-text" id="email" style="line-height: 5px;">&#9993; {{hotel.email}} </p>
+       </div>
+    </nb-card-body>    
+</nb-card>
+
+
+<nb-list nbInfiniteList [threshold]="500" *ngIf="hotel!=null">
+    <nb-list-item *ngFor="let room of hotel.rooms" class="body">
+      <nb-card accent="success">
+        <!-- <nb-card-header>{{room.number}}</nb-card-header> -->
+        
+        <nb-card-body class ="hotal_dis">
+        
+        <div class="main_div">
+          <div class="block_size">
+           <img [src]="room.image" alt="Room Picture" class="hotalpic"/>
+          </div>
+          <div class="block_mid">
+            <span></span>
+            <p class="detail-text" style="line-height: 5px;"> Floor:  {{room.floor}} </p> 
+            <p class="detail-text" style="line-height: 5px;">Size:   {{room.size}} </p>
+            <p class="detail-text" style="line-height: 5px;">Price:   {{room.price}} </p>
+          </div>
+          <div class="block_size">
+          <p class ="detailBox">
+            <button nbButton shape="round" size="small" status="success" class="viewDetailBtn" (click)="sendDataToReservation(room.number, room.price)">
+                Book Now
+                <i class="material-icons"></i> 
+            </button>
+            </p>
+          
+          </div>
+        </div>
+        </nb-card-body>
+        
+   </nb-card>
+    
+</nb-list-item>
+</nb-list>

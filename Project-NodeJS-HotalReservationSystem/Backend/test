@@ -1,0 +1,66 @@
+GET http://localhost:3000/api/createHotel HTTP/1.1
+
+###
+POST http://localhost:3000/api/signup HTTP/1.1
+content-type: application/json
+
+{
+    "username": "karsten",
+    "password": "12345"
+}
+
+###
+
+POST http://localhost:3000/api/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "karsten@gmail.com",
+    "password": "12345"
+}
+###
+GET  http://localhost:3000/api/search?name=MIU&fromDate=2021-05-10&ToDate=2021-05-11 HTTP/1.1
+
+###
+GET http://localhost:3000/api/hotel?name=MIU&fromDate=2021-05-10&ToDate=2021-05-11 HTTP/1.1
+
+###
+POST http://localhost:3000/api/hotel/MIU/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id" : 7,
+    "fromDate" : "2021-10-04",
+    "toDate" : "2021-10-04",
+    "User" : {
+        "username" : "asaad",
+        "Name" : "Asaad"
+    }
+}
+
+###
+DELETE http://localhost:3000/api/hotel/MIU/1/7 HTTP/1.1
+
+
+###
+GET http://localhost:3000/api/profile/reservations HTTP/1.1
+
+###
+POST http://localhost:3000/api/create-password HTTP/1.1
+content-type: application/json
+{
+    "username": "karsten.rivas@gmail.com"
+}
+
+###
+POST http://localhost:3000/api/create-password HTTP/1.1
+content-type: application/json
+
+{
+    "username": "karsten.rivas@gmail.com",
+    "password": "12345"
+}
+
+
+###
+DELETE http://localhost:3000/api/reservation/6075d4fa608775321c2af8e2 HTTP/1.1

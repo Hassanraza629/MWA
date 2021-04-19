@@ -1,0 +1,24 @@
+.single-card {
+    background: palegoldenrod;
+    display: inline-block;
+}
+
+.hotel-pic {
+    width: 40%;
+    float: left;
+}
+
+.single-card {
+    display: inline-block;
+}
+
+.hotel-content {
+    width: 55%;
+    float: right;
+}
+
+#hotel-image {
+    max-height: 250px;
+    max-width: 250px;
+}
+

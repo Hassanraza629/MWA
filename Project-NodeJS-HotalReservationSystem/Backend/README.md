@@ -1,0 +1,1 @@
+Import data for documents from data-hotels.json or data-users.json based on which document you are currently
